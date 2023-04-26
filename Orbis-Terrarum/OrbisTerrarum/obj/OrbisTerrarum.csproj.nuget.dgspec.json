@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj": {}
+    "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj": {}
   },
   "projects": {
-    "F:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj": {
+    "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj",
+        "projectUniqueName": "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj",
         "projectName": "OrbisTerrarum",
-        "projectPath": "F:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj",
+        "projectPath": "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\OrbisTerrarum.csproj",
         "packagesPath": "C:\\Users\\janse\\.nuget\\packages\\",
-        "outputPath": "F:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\obj\\",
+        "outputPath": "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\OrbisTerrarum\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
