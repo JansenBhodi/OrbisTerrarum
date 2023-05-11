@@ -185,3 +185,5 @@ E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Te
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\OrbisTerrarum\obj\Debug\net7.0\OrbisTerrarum.pdb
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\OrbisTerrarum\obj\Debug\net7.0\OrbisTerrarum.genruntimeconfig.cache
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\OrbisTerrarum\obj\Debug\net7.0\ref\OrbisTerrarum.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\OrbisTerrarum\bin\Debug\net7.0\LogicLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\OrbisTerrarum\bin\Debug\net7.0\LogicLayerOrbis.pdb

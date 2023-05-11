@@ -1,0 +1,12 @@
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\LogicLayerOrbis.deps.json
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\LogicLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\LogicLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.csproj.AssemblyReference.cache
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.GeneratedMSBuildEditorConfig.editorconfig
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.AssemblyInfoInputs.cache
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.AssemblyInfo.cs
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.csproj.CoreCompileInputs.cache
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\refint\LogicLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\ref\LogicLayerOrbis.dll

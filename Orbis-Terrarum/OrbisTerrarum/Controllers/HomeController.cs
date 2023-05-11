@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrbisTerrarum.Logic;
 using OrbisTerrarum.Models;
+using System.Data.Entity;
 using System.Diagnostics;
 
 namespace OrbisTerrarum.Controllers
 {
     public class HomeController : Controller
     {
-        private Database _db = new Database();
+        
 
         private readonly ILogger<HomeController> _logger;
 
@@ -28,8 +28,6 @@ namespace OrbisTerrarum.Controllers
 
         public IActionResult WorldButton() 
         {
-            World world = new World(1, "test");
-            _db.CreateWorld(world);
             return View();
         }
 

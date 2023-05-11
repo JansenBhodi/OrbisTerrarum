@@ -1,0 +1,5 @@
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\FactoryLayerOrbis\obj\Debug\net7.0\FactoryLayerOrbis.csproj.AssemblyReference.cache
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\FactoryLayerOrbis\obj\Debug\net7.0\FactoryLayerOrbis.GeneratedMSBuildEditorConfig.editorconfig
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\FactoryLayerOrbis\obj\Debug\net7.0\FactoryLayerOrbis.AssemblyInfoInputs.cache
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\FactoryLayerOrbis\obj\Debug\net7.0\FactoryLayerOrbis.AssemblyInfo.cs
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\FactoryLayerOrbis\obj\Debug\net7.0\FactoryLayerOrbis.csproj.CoreCompileInputs.cache
