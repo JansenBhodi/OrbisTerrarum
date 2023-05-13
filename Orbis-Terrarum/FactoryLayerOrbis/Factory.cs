@@ -9,7 +9,7 @@ namespace FactoryLayerOrbis
     {
         public static IWorldInterface GetWorldInterface()
         {
-            //IWorldInterface dal = new DatabaseOrbis();
+            IWorldInterface dal = new DatabaseOrbis();
 
             return dal;
         }
