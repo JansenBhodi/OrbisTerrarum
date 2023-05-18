@@ -1,4 +1,4 @@
-﻿namespace DataAccessLayerOrbis
+﻿namespace InterfaceLayerOrbis.DbClasses
 {
     public class DbUser
     {

@@ -1,4 +1,4 @@
-﻿
+﻿using InterfaceLayerOrbis.DbClasses;
 
 namespace InterfaceLayer
 {

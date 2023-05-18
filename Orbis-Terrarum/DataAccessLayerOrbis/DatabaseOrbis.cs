@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using InterfaceLayer;
+using InterfaceLayerOrbis.DbClasses;
 
 
 namespace DataAccessLayerOrbis
