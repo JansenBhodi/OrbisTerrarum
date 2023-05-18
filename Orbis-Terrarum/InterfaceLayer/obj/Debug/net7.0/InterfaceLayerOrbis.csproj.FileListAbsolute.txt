@@ -3,3 +3,10 @@ E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Te
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\InterfaceLayerOrbis.AssemblyInfoInputs.cache
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\InterfaceLayerOrbis.AssemblyInfo.cs
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\InterfaceLayerOrbis.csproj.CoreCompileInputs.cache
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\bin\Debug\net7.0\InterfaceLayerOrbis.deps.json
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\bin\Debug\net7.0\InterfaceLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\bin\Debug\net7.0\InterfaceLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\InterfaceLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\refint\InterfaceLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\InterfaceLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\InterfaceLayer\obj\Debug\net7.0\ref\InterfaceLayerOrbis.dll

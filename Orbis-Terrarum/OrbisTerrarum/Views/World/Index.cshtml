@@ -1,0 +1,28 @@
+﻿@model IEnumerable<LogicLayerOrbis.World>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "World Index";
+}
+
+<h2>World List</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WorldName)
+        </th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorldName)
+            </td>
+        </tr>
+    }
+</table>

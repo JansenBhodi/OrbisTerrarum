@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayerOrbis", "DataAccessLayerOrbis\DataAccessLayerOrbis.csproj", "{3F766E8B-E1C4-494F-8FA0-B2196B50C70E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicLayerOrbis", "LogicLayerOrbis\LogicLayerOrbis.csproj", "{E92D1F98-639C-422F-9BA3-C91B0A387895}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2416402B-6EBC-4AFF-A69B-CBA3B3312069} = {2416402B-6EBC-4AFF-A69B-CBA3B3312069}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceLayerOrbis", "InterfaceLayer\InterfaceLayerOrbis.csproj", "{168DB0B8-A1D7-4A6F-8458-25DA690E773D}"
 EndProject

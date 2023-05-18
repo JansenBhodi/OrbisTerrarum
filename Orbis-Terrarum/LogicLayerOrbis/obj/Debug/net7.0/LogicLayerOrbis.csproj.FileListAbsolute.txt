@@ -10,3 +10,12 @@ E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Te
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\refint\LogicLayerOrbis.dll
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.pdb
 E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\ref\LogicLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\LogicLayerOrbis.runtimeconfig.json
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\DataAccessLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\FactoryLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\InterfaceLayerOrbis.dll
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\FactoryLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\DataAccessLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\bin\Debug\net7.0\InterfaceLayerOrbis.pdb
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.csproj.CopyComplete
+E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\LogicLayerOrbis\obj\Debug\net7.0\LogicLayerOrbis.genruntimeconfig.cache
