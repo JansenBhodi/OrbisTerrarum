@@ -15,7 +15,7 @@
             WorldName = worldName;
             WorldCurrentYear = year;
             CreatorId = creatorId;
-
+            WorldDesc = "";
         }
         public World(int id, string worldName, DateOnly year, string desc, int creatorId)
         {
