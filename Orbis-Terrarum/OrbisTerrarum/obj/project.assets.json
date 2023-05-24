@@ -901,7 +901,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "FactoryLayerOrbis": "1.0.0"
+          "FactoryLayerOrbis": "1.0.0",
+          "InterfaceLayerOrbis": "1.0.0"
         },
         "compile": {
           "bin/placeholder/LogicLayerOrbis.dll": {}

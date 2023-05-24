@@ -244,6 +244,9 @@
             "projectReferences": {
               "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\FactoryLayerOrbis\\FactoryLayerOrbis.csproj": {
                 "projectPath": "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\FactoryLayerOrbis\\FactoryLayerOrbis.csproj"
+              },
+              "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\InterfaceLayer\\InterfaceLayerOrbis.csproj": {
+                "projectPath": "E:\\Fontys\\Semester 2\\Individueel project\\OrbisTerrarumGit\\OrbisTerrarum\\Orbis-Terrarum\\InterfaceLayer\\InterfaceLayerOrbis.csproj"
               }
             }
           }

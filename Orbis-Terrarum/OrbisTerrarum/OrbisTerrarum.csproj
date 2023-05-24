@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\User\login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Logic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\User\login.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
