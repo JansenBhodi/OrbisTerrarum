@@ -13,8 +13,8 @@ namespace LogicLayerOrbis
     public class WorldContainer
     {
         IWorldInterface iWorld = Factory.GetWorldInterface();
-        
 
+        //World Functions
 
         public List<World> GetWorlds()
         {
@@ -40,6 +40,14 @@ namespace LogicLayerOrbis
             return result;
         }
         
-        //World Functions
+        public World GetWorldById(int id)
+        {
+            DbWorld world = new DbWorld();
+
+            world = iWorld.GetWorldById(id);
+            World result = new World(world.Id, world.WorldName, DateOnly.FromDateTime(world.WorldCurrentYear), world.WorldDesc, world.CreatorId);
+
+            return result;
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace OrbisTerrarum.Controllers
         {
             return View();
         }
+
         public IActionResult Login()
         {
 

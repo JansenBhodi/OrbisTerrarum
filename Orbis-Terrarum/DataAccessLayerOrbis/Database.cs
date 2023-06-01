@@ -7,7 +7,7 @@ using InterfaceLayerOrbis.DbClasses;
 
 namespace DataAccessLayerOrbis
 {
-    public class Database : IUserInterface, IWorldInterface
+    public class Database : IUserInterface, IWorldInterface, ICharacterInterface, IEventInterface
     {
         DbConn dbConn = new DbConn();
 
@@ -47,6 +47,57 @@ namespace DataAccessLayerOrbis
             return result;
         }
 
+        public DbWorld GetWorldById(int id)
+        {
+            dbConn.ConnString.Open();
+            SqlCommand command = dbConn.ConnString.CreateCommand();
+            command.CommandText = "SELECT * FROM World WHERE Id = @id";
+            command.Parameters.Add("@id", id);
+
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+
+            DbWorld result = new DbWorld();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                result.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                result.WorldName = dt.Rows[i]["WorldName"].ToString();
+                result.WorldCurrentYear = Convert.ToDateTime(dt.Rows[i]["WorldCurrentYear"]);
+                result.WorldDesc = dt.Rows[i]["WorldDesc"].ToString();
+                result.CreatorId = Convert.ToInt32(dt.Rows[i]["CreatorId"]);
+            }
+
+            return result;
+        }
+
+        public DbUser GetUserByCreatorId(int id)
+        {
+            dbConn.ConnString.Open();
+            SqlCommand command = dbConn.ConnString.CreateCommand();
+            command.CommandText = "SELECT * FROM User WHERE Id = @creatorId";
+            command.Parameters.Add("@id", id);
+
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+
+            DbUser result = new DbUser();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                result.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                result.Email = dt.Rows[i]["Email"].ToString();
+                result.Password = dt.Rows[i]["Password"].ToString();
+                result.IsCreator = Convert.ToBoolean(dt.Rows[i]["WorldDesc"]);
+            }
+
+            return result;
+        }
+
+
+
         public bool LoginCheck(string email, string password)
         {
             dbConn.ConnString.Open();
@@ -56,7 +107,7 @@ namespace DataAccessLayerOrbis
             command.Parameters.AddWithValue("@email", email);
             command.Parameters.AddWithValue("@password", password);
 
-            int check = command.ExecuteScalar();
+            int check = int.Parse(command.ExecuteScalar().ToString());
             if (check == 1) 
             {
                 return true;

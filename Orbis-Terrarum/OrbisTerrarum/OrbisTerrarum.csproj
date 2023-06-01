@@ -7,19 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\User\login.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.6" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Logic\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\User\login.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

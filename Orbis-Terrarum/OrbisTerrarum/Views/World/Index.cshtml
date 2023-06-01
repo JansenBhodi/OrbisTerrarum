@@ -16,12 +16,26 @@
         <th>
             @Html.DisplayNameFor(model => model.WorldName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorldDesc)
+        </th>
+        <th>
+            @Html.ActionLink("Create New", "Create")
+        </th>
     </tr>
     @foreach(var item in Model)
     {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.WorldName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorldDesc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit World", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("World Details", "FullDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete World", "Delete", new { id = item.Id })
             </td>
         </tr>
     }

@@ -1,10 +1,13 @@
-﻿namespace LogicLayerOrbis
+﻿using System.ComponentModel;
+
+namespace LogicLayerOrbis
 {
     public class World
     {
         public int Id { get; private set; }
         public string WorldName { get; private set; }
         public DateOnly WorldCurrentYear { get; private set; }
+        [DisplayName("World Description")]
         public string WorldDesc { get; private set; }
         public int CreatorId { get; private set; }
 
