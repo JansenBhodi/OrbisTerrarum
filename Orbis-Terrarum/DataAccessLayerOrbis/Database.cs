@@ -11,12 +11,16 @@ namespace DataAccessLayerOrbis
     {
         DbConn dbConn = new DbConn();
 
+        #region WorldFunctions
         public void CreateWorld(DbWorld world)
         {
             dbConn.ConnString.Open();
             SqlCommand command = dbConn.ConnString.CreateCommand();
-            command.CommandText = "INSERT INTO World (WorldName) VALUES (@WorldName)";
+            command.CommandText = "INSERT INTO World (WorldName, WorldCurrentYear, WorldDesc, CreatorId) VALUES (@WorldName, @WorldCurrentYear, @WorldDesc, @CreatorId)";
             command.Parameters.AddWithValue("@WorldName", world.WorldName);
+            command.Parameters.AddWithValue("@WorldCurrentYear", world.WorldCurrentYear);
+            command.Parameters.AddWithValue("@WorldDesc", world.WorldDesc);
+            command.Parameters.AddWithValue("@CreatorId", world.CreatorId);
 
             command.ExecuteNonQuery();
             dbConn.ConnString.Close();
@@ -52,7 +56,7 @@ namespace DataAccessLayerOrbis
             dbConn.ConnString.Open();
             SqlCommand command = dbConn.ConnString.CreateCommand();
             command.CommandText = "SELECT * FROM World WHERE Id = @id";
-            command.Parameters.Add("@id", id);
+            command.Parameters.AddWithValue("@id", id);
 
             SqlDataReader reader = command.ExecuteReader();
             DataTable dt = new DataTable();
@@ -72,12 +76,45 @@ namespace DataAccessLayerOrbis
             return result;
         }
 
+        public void UpdateWorld(DbWorld world)
+        {
+            dbConn.ConnString.Open();
+            SqlCommand command = dbConn.ConnString.CreateCommand();
+            command.CommandText = "UPDATE World SET WorldName = @worldName, WorldCurrentYear = @worldCurrentYear, WorldDesc = @worldDesc WHERE Id = @id";
+            command.Parameters.AddWithValue("@worldName", world.WorldName);
+            command.Parameters.AddWithValue("@worldCurrentYear", world.WorldCurrentYear);
+            command.Parameters.AddWithValue("@worldDesc", world.WorldDesc);
+            command.Parameters.AddWithValue("@id", world.Id);
+
+            command.ExecuteNonQuery();
+            dbConn.ConnString.Close();
+        }
+
+        public void DeleteWorld(DbWorld world)
+        {
+            dbConn.ConnString.Open();
+            SqlCommand command = dbConn.ConnString.CreateCommand();
+            command.CommandText = "DELETE FROM World WHERE Id = @id";
+            command.Parameters.AddWithValue("@id", world.Id);
+
+            command.ExecuteNonQuery();
+
+            command.CommandText = "UPDATE " + '"' + "User" +'"' + " SET UserIsCreator = 0 WHERE Id = @id";
+            command.Parameters.AddWithValue("@id", world.CreatorId);
+
+            command.ExecuteNonQuery();
+            dbConn.ConnString.Close();
+        }
+
+        #endregion
+
+        #region UserFunctions
         public DbUser GetUserByCreatorId(int id)
         {
             dbConn.ConnString.Open();
             SqlCommand command = dbConn.ConnString.CreateCommand();
-            command.CommandText = "SELECT * FROM User WHERE Id = @creatorId";
-            command.Parameters.Add("@id", id);
+            command.CommandText = "SELECT * FROM " + '"' + "User" + '"' + " WHERE Id = @id";
+            command.Parameters.AddWithValue("@id", id);
 
             SqlDataReader reader = command.ExecuteReader();
             DataTable dt = new DataTable();
@@ -88,15 +125,13 @@ namespace DataAccessLayerOrbis
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 result.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
-                result.Email = dt.Rows[i]["Email"].ToString();
-                result.Password = dt.Rows[i]["Password"].ToString();
-                result.IsCreator = Convert.ToBoolean(dt.Rows[i]["WorldDesc"]);
+                result.Email = dt.Rows[i]["UserEmail"].ToString();
+                result.Password = dt.Rows[i]["UserPassword"].ToString();
+                result.IsCreator = Convert.ToBoolean(dt.Rows[i]["UserIsCreator"]);
             }
 
             return result;
         }
-
-
 
         public bool LoginCheck(string email, string password)
         {
@@ -114,5 +149,31 @@ namespace DataAccessLayerOrbis
             }
             return false;
         }
+
+        public List<DbUser> GetNonCreatorUsers()
+        {
+            dbConn.ConnString.Open();
+            SqlCommand command = dbConn.ConnString.CreateCommand();
+            command.CommandText = "SELECT * FROM " + '"' + "User" + '"' + " WHERE UserIsCreator = 0";
+
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            List<DbUser> result = new List<DbUser>();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DbUser user = new DbUser();
+                user.Id = Convert.ToInt32(dt.Rows[i]["Id"]);
+                user.Email = dt.Rows[i]["UserEmail"].ToString();
+                user.IsCreator = Convert.ToBoolean(dt.Rows[i]["UserIsCreator"]);
+                user.Password = dt.Rows[i]["UserPassword"].ToString();
+                result.Add(user);
+            }
+
+            return result;
+        }
+
+        #endregion
     }
 }

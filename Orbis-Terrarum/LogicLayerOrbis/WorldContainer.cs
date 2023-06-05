@@ -49,5 +49,38 @@ namespace LogicLayerOrbis
 
             return result;
         }
+
+        public void CreateWorld(World world)
+        {
+            DbWorld newWorld = new DbWorld();
+
+            newWorld.WorldDesc = world.WorldDesc;
+            newWorld.CreatorId = world.CreatorId;
+            newWorld.WorldName = world.WorldName;
+            newWorld.WorldCurrentYear = world.WorldCurrentYear.ToDateTime(TimeOnly.MinValue);
+
+            iWorld.CreateWorld(newWorld);
+        }
+
+        public void EditWorld(World world)
+        {
+            DbWorld Update = new DbWorld();
+
+            Update.WorldDesc = world.WorldDesc;
+            Update.CreatorId = world.CreatorId;
+            Update.WorldName = world.WorldName;
+            Update.WorldCurrentYear = world.WorldCurrentYear.ToDateTime(TimeOnly.MinValue);
+            Update.Id = world.Id;
+
+            iWorld.UpdateWorld(Update);
+        }
+
+        public void DeleteWorld(World world)
+        {
+            DbWorld Target = new DbWorld();
+            Target.Id= world.Id;
+            Target.CreatorId = world.CreatorId;
+            iWorld.DeleteWorld(Target);
+        }
     }
 }

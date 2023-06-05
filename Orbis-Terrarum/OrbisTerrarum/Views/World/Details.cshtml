@@ -22,6 +22,18 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Worlds.WorldDesc)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Worlds.WorldCurrentYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Worlds.WorldCurrentYear)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Id)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Users.Email)
         </dt>
@@ -32,5 +44,7 @@
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Worlds.Id }) |
+    @Html.ActionLink("Character List", "Index", "Character", new { id = Model.Worlds.Id }) |
+    @Html.ActionLink("Event List", "Index", "Event", new { id = Model.Worlds.Id }) |
     <a asp-action="Index">Back to List</a>
 </div>

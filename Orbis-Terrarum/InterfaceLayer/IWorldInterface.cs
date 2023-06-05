@@ -6,7 +6,9 @@ namespace InterfaceLayer
     {
         List<DbWorld> GetAllWorlds();
 
-        public DbWorld GetWorldById(int id);
+        DbWorld GetWorldById(int id);
         void CreateWorld(DbWorld world);
+        void UpdateWorld(DbWorld world);
+        void DeleteWorld(DbWorld world);
     }
 }
