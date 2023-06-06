@@ -21,5 +21,19 @@ namespace FactoryLayerOrbis
 
             return dal;
         }
+
+        public static IEventInterface GetEventInterface()
+        {
+            IEventInterface dal = new Database();
+
+            return dal;
+        }
+
+        public static ICharacterInterface GetCharacterInterface()
+        {
+            ICharacterInterface dal = new Database();
+
+            return dal;
+        }
     }
 }

@@ -38,14 +38,16 @@ namespace OrbisTerrarum.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("WorldName, WorldCurrentyear, WorldDesc, CreatorId")] World world)
+        public IActionResult Create(IFormCollection collection)
         {
+            World result = new World(0, collection["WorldName"].ToString(), DateOnly.FromDateTime(Convert.ToDateTime(collection["WorldCurrentYear"].ToString())), collection["WorldDesc"].ToString(), int.Parse(collection["CreatorId"]));
+
             if (ModelState.IsValid)
             {
-                worldContainer.CreateWorld(world);
+                worldContainer.CreateWorld(result);
                 return RedirectToAction("Index");
             }
-            return View(world);
+            return View(result);
         }
 
         public IActionResult Edit(int id) 
@@ -54,16 +56,18 @@ namespace OrbisTerrarum.Controllers
             return View(world);
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([Bind("Id, WorldName, WorldCurrentyear, WorldDesc, CreatorId")] World world)
+        public IActionResult Edit(IFormCollection collection)
         {
+            World result = new World(int.Parse(collection["Id"]), collection["WorldName"].ToString(), DateOnly.FromDateTime(Convert.ToDateTime(collection["WorldCurrentYear"].ToString())), collection["WorldDesc"].ToString(), int.Parse(collection["CreatorId"]));
             if (ModelState.IsValid)
             {
-                worldContainer.EditWorld(world);
+                worldContainer.EditWorld(result);
                 return RedirectToAction("Index");
             }
-            return View(world);
+            return View(result);
         }
 
         public IActionResult Delete(int id) 

@@ -11,15 +11,6 @@ namespace LogicLayerOrbis
         public string WorldDesc { get; private set; }
         public int CreatorId { get; private set; }
 
-
-        public World(int id, string worldName, DateOnly year, int creatorId)
-        {
-            Id = id;
-            WorldName = worldName;
-            WorldCurrentYear = year;
-            CreatorId = creatorId;
-            WorldDesc = "";
-        }
         public World(int id, string worldName, DateOnly year, string desc, int creatorId)
         {
             Id = id;
@@ -28,8 +19,8 @@ namespace LogicLayerOrbis
             CreatorId = creatorId;
             WorldDesc = desc;
         }
-        //Update this world function
 
+        //Update this world function
         public void UpdateWorld(World newWorld)
         {
             WorldName = newWorld.WorldName;

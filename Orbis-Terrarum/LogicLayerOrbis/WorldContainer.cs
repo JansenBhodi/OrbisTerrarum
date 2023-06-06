@@ -24,14 +24,15 @@ namespace LogicLayerOrbis
 
             foreach(DbWorld db in test) 
             {
-                if(db.WorldDesc != null)
+                if (db.WorldDesc != null)
                 {
                     World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), db.WorldDesc, db.CreatorId);
                     result.Add(world);
                 }
                 else
                 {
-                    World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), db.CreatorId);
+
+                    World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), "", db.CreatorId);
                     result.Add(world);
                 }
                 
