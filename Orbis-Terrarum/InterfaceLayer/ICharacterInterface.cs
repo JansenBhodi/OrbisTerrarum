@@ -11,7 +11,7 @@ namespace InterfaceLayerOrbis
     {
         List<DbCharacter> GetCharactersByWorld(int id);
         void UpdateCharacter(DbCharacter character);
-        List<DbCharacter> GetCharacterById(int id);
+        DbCharacter GetCharacterById(int id);
         void CreateCharacter(DbCharacter character);
         List<DbCharacter> GetCharactersByEvent(int id);
         void DeleteCharacter(DbCharacter character);

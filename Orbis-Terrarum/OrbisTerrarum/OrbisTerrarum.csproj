@@ -14,8 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Logic\" />
-    <Folder Include="Views\Event\" />
-    <Folder Include="Views\Character\" />
   </ItemGroup>
 
   <ItemGroup>

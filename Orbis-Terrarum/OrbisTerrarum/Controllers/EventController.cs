@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using LogicLayerOrbis;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace OrbisTerrarum.Controllers
 {
     public class EventController : Controller
     {
+        EventContainer container = new EventContainer();
         // GET: EventController
         public ActionResult Index(int id)
         {
+
             return View();
         }
 

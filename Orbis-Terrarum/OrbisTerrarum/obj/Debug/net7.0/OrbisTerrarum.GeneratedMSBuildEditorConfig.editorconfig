@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Fontys\Semester 2\Individueel project\OrbisTerrarumGit\OrbisTerrarum\Orbis-Terrarum\OrbisTerrarum
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/Fontys/Semester 2/Individueel project/OrbisTerrarumGit/OrbisTerrarum/Orbis-Terrarum/OrbisTerrarum/Views/Character/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fontys/Semester 2/Individueel project/OrbisTerrarumGit/OrbisTerrarum/Orbis-Terrarum/OrbisTerrarum/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Fontys/Semester 2/Individueel project/OrbisTerrarumGit/OrbisTerrarum/Orbis-Terrarum/OrbisTerrarum/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

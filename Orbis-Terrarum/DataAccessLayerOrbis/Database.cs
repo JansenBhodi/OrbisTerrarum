@@ -212,7 +212,7 @@ namespace DataAccessLayerOrbis
             return result;
         }
 
-        public List<DbCharacter> GetCharacterById(int id)
+        public DbCharacter GetCharacterById(int id)
         {
             dbConn.ConnString.Open();
             SqlCommand command = dbConn.ConnString.CreateCommand();
@@ -277,7 +277,6 @@ namespace DataAccessLayerOrbis
             command.Parameters.AddWithValue("@CharacterAge", character.CharacterAge);
             command.Parameters.AddWithValue("@CharacterDesc", character.CharacterDesc);
             command.Parameters.AddWithValue("@CharacterAlignment", character.CharacterAlignment);
-            command.Parameters.AddWithValue()
 
             command.ExecuteNonQuery();
             dbConn.ConnString.Close();
@@ -334,7 +333,7 @@ namespace DataAccessLayerOrbis
                 dbEvent.WorldId = Convert.ToInt32(dt.Rows[i]["WorldId"]);
                 dbEvent.EventName = dt.Rows[i]["EventName"].ToString();
                 dbEvent.EventDescription = dt.Rows[i]["EventDesc"].ToString();
-                dbEvent.EventResolved = Convert.ToInt32(dt.Rows[i]["EventResolved"]);
+                dbEvent.EventResolved = Convert.ToBoolean(dt.Rows[i]["EventResolved"]);
                 dbEvent.EventStart = DateOnly.FromDateTime(Convert.ToDateTime(dt.Rows[i]["EventStart"]));
                 dbEvent.EventEnd = DateOnly.FromDateTime(Convert.ToDateTime(dt.Rows[i]["EventEnd"]));
                 result.Add(dbEvent);
@@ -362,7 +361,7 @@ namespace DataAccessLayerOrbis
                 result.WorldId = Convert.ToInt32(dt.Rows[i]["WorldId"]);
                 result.EventName = dt.Rows[i]["EventName"].ToString();
                 result.EventDescription = dt.Rows[i]["EventDesc"].ToString();
-                result.EventResolved = Convert.ToInt32(dt.Rows[i]["EventResolved"]);
+                result.EventResolved = Convert.ToBoolean(dt.Rows[i]["EventResolved"]);
                 result.EventStart = DateOnly.FromDateTime(Convert.ToDateTime(dt.Rows[i]["EventStart"]));
                 result.EventEnd = DateOnly.FromDateTime(Convert.ToDateTime(dt.Rows[i]["EventEnd"]));
             }
@@ -390,7 +389,7 @@ namespace DataAccessLayerOrbis
                 dbEvent.WorldId = Convert.ToInt32(dt.Rows[i]["WorldId"]);
                 dbEvent.EventName = dt.Rows[i]["EventName"].ToString();
                 dbEvent.EventDescription = dt.Rows[i]["EventDesc"].ToString();
-                dbEvent.EventResolved = Convert.ToInt32(dt.Rows[i]["EventResolved"]);
+                dbEvent.EventResolved = Convert.ToBoolean(dt.Rows[i]["EventResolved"]);
                 dbEvent.EventStart = DateOnly.FromDateTime(Convert.ToDateTime(dt.Rows[i]["EventStart"]));
                 dbEvent.EventEnd = DateOnly.FromDateTime(Convert.ToDateTime(dt.Rows[i]["EventEnd"]));
                 result.Add(dbEvent);

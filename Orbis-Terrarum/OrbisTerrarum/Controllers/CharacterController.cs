@@ -1,14 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using LogicLayerOrbis;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace OrbisTerrarum.Controllers
 {
     public class CharacterController : Controller
     {
+        CharacterContainer container = new CharacterContainer();
         // GET: CharacterController
         public ActionResult Index(int id)
         {
-            return View();
+            return View(container.GetCharactersByWorld(id));
         }
 
         // GET: CharacterController/Details/5
