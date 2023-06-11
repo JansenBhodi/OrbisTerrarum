@@ -1,9 +1,9 @@
 ﻿using LogicLayerOrbis;
 namespace OrbisTerrarum.ViewModels
 {
-    public class CharacterEventDetailsModel
+    public class CharacterEventsDetailsModel
     {
         public List<Event> Events { get; set; }
-        public List<Character> Characters { get; set; }
+        public Character Characters { get; set; }
     }
 }

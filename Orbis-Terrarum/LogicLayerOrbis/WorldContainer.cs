@@ -7,6 +7,7 @@ using FactoryLayerOrbis;
 using InterfaceLayer;
 using InterfaceLayerOrbis.DbClasses;
 using Microsoft.Identity.Client;
+using LogicLayerOrbis.Exceptions;
 
 namespace LogicLayerOrbis
 {
@@ -19,21 +20,38 @@ namespace LogicLayerOrbis
         public List<World> GetWorlds()
         {
             List<World> result = new List<World>();
+            List<DbWorld> response = new List<DbWorld>();
 
-            List<DbWorld> test = iWorld.GetAllWorlds();
-
-            foreach(DbWorld db in test) 
+            try
             {
-                if (db.WorldDesc != null)
+                response = iWorld.GetAllWorlds();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            foreach(DbWorld db in response) 
+            {
+                try
                 {
-                    World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), db.WorldDesc, db.CreatorId);
-                    result.Add(world);
+                    if (db.WorldDesc != null)
+                    {
+                        World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), db.WorldDesc, db.CreatorId);
+                        result.Add(world);
+                    }
+                    else
+                    {
+
+                        World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), "", db.CreatorId);
+                        result.Add(world);
+                    }
                 }
-                else
+                catch (Exception)
                 {
 
-                    World world = new World(db.Id, db.WorldName, DateOnly.FromDateTime(db.WorldCurrentYear), "", db.CreatorId);
-                    result.Add(world);
+                    throw new CreateItemListException("Failed to translate database entry to model. Check differences between model and database.");
                 }
                 
             }
@@ -45,7 +63,16 @@ namespace LogicLayerOrbis
         {
             DbWorld world = new DbWorld();
 
-            world = iWorld.GetWorldById(id);
+            try
+            {
+                world = iWorld.GetWorldById(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
             World result = new World(world.Id, world.WorldName, DateOnly.FromDateTime(world.WorldCurrentYear), world.WorldDesc, world.CreatorId);
 
             return result;
@@ -60,7 +87,15 @@ namespace LogicLayerOrbis
             newWorld.WorldName = world.WorldName;
             newWorld.WorldCurrentYear = world.WorldCurrentYear.ToDateTime(TimeOnly.MinValue);
 
-            iWorld.CreateWorld(newWorld);
+            try
+            {
+                iWorld.CreateWorld(newWorld);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void EditWorld(World world)
@@ -73,7 +108,15 @@ namespace LogicLayerOrbis
             Update.WorldCurrentYear = world.WorldCurrentYear.ToDateTime(TimeOnly.MinValue);
             Update.Id = world.Id;
 
-            iWorld.UpdateWorld(Update);
+            try
+            {
+                iWorld.UpdateWorld(Update);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void DeleteWorld(World world)
@@ -81,7 +124,16 @@ namespace LogicLayerOrbis
             DbWorld Target = new DbWorld();
             Target.Id= world.Id;
             Target.CreatorId = world.CreatorId;
-            iWorld.DeleteWorld(Target);
+
+            try
+            {
+                iWorld.DeleteWorld(Target);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

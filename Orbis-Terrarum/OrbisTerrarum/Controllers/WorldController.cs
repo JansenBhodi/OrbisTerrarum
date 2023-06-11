@@ -13,20 +13,40 @@ namespace OrbisTerrarum.Controllers
 
         public IActionResult Index()
         {
-            return View(worldContainer.GetWorlds());
+            List<World> worldList = new List<World>();
+
+            try
+            {
+                worldList = worldContainer.GetWorlds();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return View(worldList);
         }
 
         public IActionResult Details(int id)
         {
+
             if(id == null) 
             {
                 RedirectToAction("Index");
             }
 
             WorldCreatorDetailsModel model = new WorldCreatorDetailsModel();
+            try
+            {
+                model.Worlds = worldContainer.GetWorldById(id);
+                model.Users = userContainer.GetUserByCreatorId(model.Worlds.CreatorId);
+            }
+            catch (Exception)
+            {
 
-            model.Worlds = worldContainer.GetWorldById(id);
-            model.Users = userContainer.GetUserByCreatorId(model.Worlds.CreatorId);
+                throw;
+            }
 
             return View(model);
         }
@@ -40,20 +60,45 @@ namespace OrbisTerrarum.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(IFormCollection collection)
         {
-            World result = new World(0, collection["WorldName"].ToString(), DateOnly.FromDateTime(Convert.ToDateTime(collection["WorldCurrentYear"].ToString())), collection["WorldDesc"].ToString(), int.Parse(collection["CreatorId"]));
-
-            if (ModelState.IsValid)
+            try
             {
-                worldContainer.CreateWorld(result);
-                return RedirectToAction("Index");
+                World result = new World(0, collection["WorldName"].ToString(), DateOnly.FromDateTime(Convert.ToDateTime(collection["WorldCurrentYear"].ToString())), collection["WorldDesc"].ToString(), int.Parse(collection["CreatorId"]));
+            
+            
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        worldContainer.CreateWorld(result);
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                    return RedirectToAction("Index");
+                }
+                return View(result);
             }
-            return View(result);
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public IActionResult Edit(int id) 
         {
-            World world = worldContainer.GetWorldById(id);
-            return View(world);
+            try
+            {
+                World world = worldContainer.GetWorldById(id);
+                return View(world);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 
@@ -61,27 +106,51 @@ namespace OrbisTerrarum.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(IFormCollection collection)
         {
-            World result = new World(int.Parse(collection["Id"]), collection["WorldName"].ToString(), DateOnly.FromDateTime(Convert.ToDateTime(collection["WorldCurrentYear"].ToString())), collection["WorldDesc"].ToString(), int.Parse(collection["CreatorId"]));
-            if (ModelState.IsValid)
+            try
             {
-                worldContainer.EditWorld(result);
-                return RedirectToAction("Index");
+                World result = new World(int.Parse(collection["Id"]), collection["WorldName"].ToString(), DateOnly.FromDateTime(Convert.ToDateTime(collection["WorldCurrentYear"].ToString())), collection["WorldDesc"].ToString(), int.Parse(collection["CreatorId"]));
+                if (!ModelState.IsValid)
+                {
+                    worldContainer.EditWorld(result);
+                    return RedirectToAction("Index");
+                }
+                return View(result);
             }
-            return View(result);
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public IActionResult Delete(int id) 
         {
-            World world = worldContainer.GetWorldById(id);
-            return View(world);
+            try
+            {
+                World world = worldContainer.GetWorldById(id);
+                return View(world);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            World world = worldContainer.GetWorldById(id);
-            worldContainer.DeleteWorld(world);
+            try
+            {
+                World world = worldContainer.GetWorldById(id);
+                worldContainer.DeleteWorld(world);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             return RedirectToAction("Index");
         }
     }

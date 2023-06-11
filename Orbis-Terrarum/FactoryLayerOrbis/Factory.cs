@@ -10,30 +10,61 @@ namespace FactoryLayerOrbis
     {
         public static IWorldInterface GetWorldInterface()
         {
-            IWorldInterface dal = new Database();
+            try
+            {
+                IWorldInterface dal = new Database();
 
-            return dal;
+                return dal;
+            }
+            catch (Exception)
+            {
+                throw new FactoryFatalException("Couldn't create the specified Interface: World");
+            }
         }
 
         public static IUserInterface GetUserInterface()
         {
-            IUserInterface dal = new Database();
+            
+            try
+            {
+                IUserInterface dal = new Database();
 
-            return dal;
+                return dal;
+            }
+            catch (Exception)
+            {
+                throw new FactoryFatalException("Couldn't create the specified Interface: User");
+            }
         }
 
         public static IEventInterface GetEventInterface()
         {
-            IEventInterface dal = new Database();
+            
+            try
+            {
+                IEventInterface dal = new Database();
 
-            return dal;
+                return dal;
+            }
+            catch (Exception)
+            {
+                throw new FactoryFatalException("Couldn't create the specified Interface: Event");
+            }
         }
 
         public static ICharacterInterface GetCharacterInterface()
         {
-            ICharacterInterface dal = new Database();
+            
+            try
+            {
+                ICharacterInterface dal = new Database();
 
-            return dal;
+                return dal;
+            }
+            catch (Exception)
+            {
+                throw new FactoryFatalException("Couldn't create the specified Interface: Character");
+            }
         }
     }
 }

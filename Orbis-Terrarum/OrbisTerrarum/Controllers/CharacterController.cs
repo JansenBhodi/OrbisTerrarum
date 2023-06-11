@@ -1,26 +1,58 @@
 ﻿using LogicLayerOrbis;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrbisTerrarum.ViewModels;
 
 namespace OrbisTerrarum.Controllers
 {
     public class CharacterController : Controller
     {
         CharacterContainer container = new CharacterContainer();
+        EventContainer eventContainer = new EventContainer();
+
         // GET: CharacterController
         public ActionResult Index(int id)
         {
-            return View(container.GetCharactersByWorld(id));
+            try
+            {
+                return View(container.GetCharactersByWorld(id));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // GET: CharacterController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            CharacterEventsDetailsModel model = new CharacterEventsDetailsModel();
+
+            try
+            {
+                model.Characters = container.GetCharacterById(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            try
+            {
+                model.Events = eventContainer.GetEventsByCharacter(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return View(model);
         }
 
         // GET: CharacterController/Create
-        public ActionResult Create(int id)
+        public ActionResult Create()
         {
             return View();
         }
@@ -32,7 +64,13 @@ namespace OrbisTerrarum.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if(ModelState.IsValid) 
+                {
+                    Character result = new Character(0, int.Parse(collection["WorldId"]), collection["CharacterName"].ToString(), int.Parse(collection["CharacterAge"]), collection["CharacterDesc"].ToString(), int.Parse(collection["CharacterAlignment"]));
+                    container.CreateCharacter(result);
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
             catch
             {
@@ -43,7 +81,16 @@ namespace OrbisTerrarum.Controllers
         // GET: CharacterController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            try
+            {
+                Character input = container.GetCharacterById(id);
+                return View(input);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // POST: CharacterController/Edit/5
@@ -53,7 +100,13 @@ namespace OrbisTerrarum.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid) 
+                {
+                    Character result = new Character(0, int.Parse(collection["WorldId"]), collection["CharacterName"].ToString(), int.Parse(collection["CharacterAge"]), collection["CharacterDesc"].ToString(), int.Parse(collection["CharacterAlignment"]));
+                    container.UpdateCharacter(result);
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
             catch
             {
@@ -64,7 +117,16 @@ namespace OrbisTerrarum.Controllers
         // GET: CharacterController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            try
+            {
+                Character character = container.GetCharacterById(id);
+                return View(character);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // POST: CharacterController/Delete/5
@@ -74,7 +136,8 @@ namespace OrbisTerrarum.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                container.DeleteCharacter(id);
+                return RedirectToAction("Index");
             }
             catch
             {

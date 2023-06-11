@@ -23,7 +23,16 @@ namespace LogicLayerOrbis
 
         public User GetUserByCreatorId(int id)
         {
-            DbUser user = _userInterface.GetUserByCreatorId(id);
+            DbUser user = new DbUser();
+            try
+            {
+                user = _userInterface.GetUserByCreatorId(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
             User result = new User(user.Id, user.Email, user.Password, user.IsCreator);
 

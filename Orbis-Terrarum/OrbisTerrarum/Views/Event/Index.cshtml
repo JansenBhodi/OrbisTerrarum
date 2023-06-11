@@ -9,6 +9,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
 <table class="table">
     <thead>
         <tr>
@@ -36,9 +39,6 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.EventId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.WorldId)
             </td>
             <td>
@@ -57,9 +57,9 @@
                     @Html.DisplayFor(modelItem => item.EventEnd)
                 </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {  id=item.EventId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.EventId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.EventId })
             </td>
         </tr>
 }

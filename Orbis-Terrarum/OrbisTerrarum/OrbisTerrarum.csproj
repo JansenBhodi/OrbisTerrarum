@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LogicLayerOrbis\LogicLayerOrbis.csproj" />
   </ItemGroup>
 
