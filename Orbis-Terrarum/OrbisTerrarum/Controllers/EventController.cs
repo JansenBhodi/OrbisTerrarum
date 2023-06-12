@@ -9,12 +9,22 @@ namespace OrbisTerrarum.Controllers
     {
         EventContainer container = new EventContainer();
         CharacterContainer characterContainer = new CharacterContainer();
+        public int LastWorld = 0;
+
         // GET: EventController
         public ActionResult Index(int id)
         {
             try
             {
-                return View(container.GetEventsByWorld(id));
+                if (id != 0)
+                {
+                    LastWorld = id;
+                    return View(container.GetEventsByWorld(id));
+                }
+                else
+                {
+                    return View(container.GetEventsByWorld(id));
+                }
             }
             catch (Exception)
             {
@@ -51,10 +61,10 @@ namespace OrbisTerrarum.Controllers
         }
 
         // GET: EventController/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-
-            return View();
+            Event newEvent = new Event(0, id, null, null, false, DateOnly.MinValue, DateOnly.MaxValue);
+            return View(newEvent);
         }
 
         // POST: EventController/Create
@@ -68,7 +78,7 @@ namespace OrbisTerrarum.Controllers
                 {
                     Event result = new Event(0, int.Parse(collection["WorldId"]), collection["EventName"].ToString(), collection["EventDesc"].ToString(), Convert.ToBoolean(collection["EventResolved"]), DateOnly.Parse(collection["EventStart"]), DateOnly.Parse(collection["EventEnd"]));
                     container.CreateEvent(result);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { id = int.Parse(collection["WorldId"]) });
                 }
                 return View();
             }
@@ -102,9 +112,9 @@ namespace OrbisTerrarum.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Event result = new Event(0, int.Parse(collection["WorldId"]), collection["EventName"].ToString(), collection["EventDesc"].ToString(), Convert.ToBoolean(collection["EventResolved"]), DateOnly.Parse(collection["EventStart"]), DateOnly.Parse(collection["EventEnd"]));
+                    Event result = new Event(int.Parse(collection["EventId"]), int.Parse(collection["WorldId"]), collection["EventName"].ToString(), collection["EventDesc"].ToString(), Convert.ToBoolean(collection["EventResolved"]), DateOnly.Parse(collection["EventStart"]), DateOnly.Parse(collection["EventEnd"]));
                     container.EditEvent(result);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { id = int.Parse(collection["WorldId"]) });
                 }
                 return View();
             }
@@ -136,8 +146,9 @@ namespace OrbisTerrarum.Controllers
         {
             try
             {
+                Event worldId = container.GetEventById(id);
                 container.DeleteEvent(id);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = worldId.WorldId });
             }
             catch
             {

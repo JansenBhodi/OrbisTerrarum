@@ -9,6 +9,8 @@ namespace OrbisTerrarum.Controllers
     {
         CharacterContainer container = new CharacterContainer();
         EventContainer eventContainer = new EventContainer();
+        public int LastWorld;
+
 
         // GET: CharacterController
         public ActionResult Index(int id)
@@ -52,9 +54,10 @@ namespace OrbisTerrarum.Controllers
         }
 
         // GET: CharacterController/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            Character character = new Character(0, id, null, 0, null, 0);
+            return View(character);
         }
 
         // POST: CharacterController/Create
@@ -66,9 +69,9 @@ namespace OrbisTerrarum.Controllers
             {
                 if(ModelState.IsValid) 
                 {
-                    Character result = new Character(0, int.Parse(collection["WorldId"]), collection["CharacterName"].ToString(), int.Parse(collection["CharacterAge"]), collection["CharacterDesc"].ToString(), int.Parse(collection["CharacterAlignment"]));
+                    Character result = new Character(0, int.Parse(collection["WorldId"]), collection["CharacterName"].ToString(), int.Parse(collection["CharacterAge"]), collection["CharacterDesc"].ToString(), 0);
                     container.CreateCharacter(result);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Character", new { id = int.Parse(collection["WorldId"]) });
                 }
                 return View();
             }
@@ -102,9 +105,9 @@ namespace OrbisTerrarum.Controllers
             {
                 if (ModelState.IsValid) 
                 {
-                    Character result = new Character(0, int.Parse(collection["WorldId"]), collection["CharacterName"].ToString(), int.Parse(collection["CharacterAge"]), collection["CharacterDesc"].ToString(), int.Parse(collection["CharacterAlignment"]));
+                    Character result = new Character(int.Parse(collection["Id"]), int.Parse(collection["WorldId"]), collection["CharacterName"].ToString(), int.Parse(collection["CharacterAge"]), collection["CharacterDesc"].ToString(), int.Parse(collection["CharacterAlignment"]));
                     container.UpdateCharacter(result);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Character", new { id = int.Parse(collection["WorldId"]) });
                 }
                 return View();
             }
@@ -136,13 +139,15 @@ namespace OrbisTerrarum.Controllers
         {
             try
             {
+                Character getWorldId = container.GetCharacterById(id);
                 container.DeleteCharacter(id);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Character", new { id = getWorldId.WorldId });
             }
             catch
             {
                 return View();
             }
+            return View();
         }
     }
 }

@@ -629,6 +629,7 @@ namespace DataAccessLayerOrbis
                 command.Parameters.AddWithValue("@CharacterAge", character.CharacterAge);
                 command.Parameters.AddWithValue("@CharacterDesc", character.CharacterDesc);
                 command.Parameters.AddWithValue("@CharacterAlignment", character.CharacterAlignment);
+                command.Parameters.AddWithValue("@id", character.Id);
             }
             catch (Exception)
             {
@@ -914,6 +915,7 @@ namespace DataAccessLayerOrbis
                 command.Parameters.AddWithValue("@eventResolved", dbEvent.EventResolved);
                 command.Parameters.AddWithValue("@eventStart", dbEvent.EventStart);
                 command.Parameters.AddWithValue("@eventEnd", dbEvent.EventEnd);
+                command.Parameters.AddWithValue("@id", dbEvent.EventId);
             }
             catch (Exception)
             {
